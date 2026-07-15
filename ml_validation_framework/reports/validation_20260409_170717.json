@@ -1,0 +1,521 @@
+{
+  "timestamp": "2026-04-09T17:07:17.284556",
+  "data_shape": {
+    "rows": 50,
+    "columns": 7
+  },
+  "summary": {
+    "total_checks": 52,
+    "passed": 44,
+    "errors": 7,
+    "warnings": 1,
+    "valid": false
+  },
+  "errors": [
+    {
+      "check": "mean_drift",
+      "column": "Pclass",
+      "message": "'Pclass': mean drifted 56.69% (threshold 20.00%)",
+      "details": {
+        "ref_mean": 2.3089,
+        "new_mean": 1.0
+      }
+    },
+    {
+      "check": "mean_drift",
+      "column": "Sex",
+      "message": "'Sex': mean drifted 21.08% (threshold 20.00%)",
+      "details": {
+        "ref_mean": 0.4625,
+        "new_mean": 0.56
+      }
+    },
+    {
+      "check": "mean_drift",
+      "column": "Age",
+      "message": "'Age': mean drifted 111.27% (threshold 20.00%)",
+      "details": {
+        "ref_mean": 30.76,
+        "new_mean": 64.9853
+      }
+    },
+    {
+      "check": "mean_drift",
+      "column": "SibSp",
+      "message": "'SibSp': mean drifted 100.00% (threshold 20.00%)",
+      "details": {
+        "ref_mean": 0.6857,
+        "new_mean": 0.0
+      }
+    },
+    {
+      "check": "mean_drift",
+      "column": "Parch",
+      "message": "'Parch': mean drifted 100.00% (threshold 20.00%)",
+      "details": {
+        "ref_mean": 0.3821,
+        "new_mean": 0.0
+      }
+    },
+    {
+      "check": "mean_drift",
+      "column": "Fare",
+      "message": "'Fare': mean drifted 1507.73% (threshold 20.00%)",
+      "details": {
+        "ref_mean": 31.9039,
+        "new_mean": 512.929
+      }
+    },
+    {
+      "check": "mean_drift",
+      "column": "Embarked",
+      "message": "'Embarked': mean drifted 100.00% (threshold 20.00%)",
+      "details": {
+        "ref_mean": 0.3589,
+        "new_mean": 0.0
+      }
+    }
+  ],
+  "warnings": [
+    {
+      "check": "variance_ratio",
+      "column": "Fare",
+      "message": "'Fare': variance ratio 3.19 exceeds 2.00",
+      "details": {
+        "ref_std": 31.1627,
+        "new_std": 99.5529
+      }
+    }
+  ],
+  "all_results": [
+    {
+      "check": "min_rows",
+      "column": null,
+      "passed": true,
+      "message": "Row count 50 OK",
+      "severity": "error"
+    },
+    {
+      "check": "required_columns",
+      "column": null,
+      "passed": true,
+      "message": "All required columns present",
+      "severity": "error"
+    },
+    {
+      "check": "nullable",
+      "column": "Pclass",
+      "passed": true,
+      "message": "Null check OK (0 nulls)",
+      "severity": "error"
+    },
+    {
+      "check": "min_value",
+      "column": "Pclass",
+      "passed": true,
+      "message": "min_value check OK",
+      "severity": "error"
+    },
+    {
+      "check": "max_value",
+      "column": "Pclass",
+      "passed": true,
+      "message": "max_value check OK",
+      "severity": "error"
+    },
+    {
+      "check": "allowed_values",
+      "column": "Pclass",
+      "passed": true,
+      "message": "allowed_values check OK",
+      "severity": "error"
+    },
+    {
+      "check": "nullable",
+      "column": "Sex",
+      "passed": true,
+      "message": "Null check OK (0 nulls)",
+      "severity": "error"
+    },
+    {
+      "check": "allowed_values",
+      "column": "Sex",
+      "passed": true,
+      "message": "allowed_values check OK",
+      "severity": "error"
+    },
+    {
+      "check": "nullable",
+      "column": "Age",
+      "passed": true,
+      "message": "Null check OK (0 nulls)",
+      "severity": "error"
+    },
+    {
+      "check": "min_value",
+      "column": "Age",
+      "passed": true,
+      "message": "min_value check OK",
+      "severity": "error"
+    },
+    {
+      "check": "max_value",
+      "column": "Age",
+      "passed": true,
+      "message": "max_value check OK",
+      "severity": "error"
+    },
+    {
+      "check": "nullable",
+      "column": "SibSp",
+      "passed": true,
+      "message": "Null check OK (0 nulls)",
+      "severity": "error"
+    },
+    {
+      "check": "min_value",
+      "column": "SibSp",
+      "passed": true,
+      "message": "min_value check OK",
+      "severity": "error"
+    },
+    {
+      "check": "max_value",
+      "column": "SibSp",
+      "passed": true,
+      "message": "max_value check OK",
+      "severity": "error"
+    },
+    {
+      "check": "nullable",
+      "column": "Parch",
+      "passed": true,
+      "message": "Null check OK (0 nulls)",
+      "severity": "error"
+    },
+    {
+      "check": "min_value",
+      "column": "Parch",
+      "passed": true,
+      "message": "min_value check OK",
+      "severity": "error"
+    },
+    {
+      "check": "max_value",
+      "column": "Parch",
+      "passed": true,
+      "message": "max_value check OK",
+      "severity": "error"
+    },
+    {
+      "check": "nullable",
+      "column": "Fare",
+      "passed": true,
+      "message": "Null check OK (0 nulls)",
+      "severity": "error"
+    },
+    {
+      "check": "min_value",
+      "column": "Fare",
+      "passed": true,
+      "message": "min_value check OK",
+      "severity": "error"
+    },
+    {
+      "check": "nullable",
+      "column": "Embarked",
+      "passed": true,
+      "message": "Null check OK (0 nulls)",
+      "severity": "error"
+    },
+    {
+      "check": "allowed_values",
+      "column": "Embarked",
+      "passed": true,
+      "message": "allowed_values check OK",
+      "severity": "error"
+    },
+    {
+      "check": "missing_rate",
+      "column": "Pclass",
+      "passed": true,
+      "message": "'Pclass': missing rate 0.00% OK",
+      "severity": "error"
+    },
+    {
+      "check": "mean_drift",
+      "column": "Pclass",
+      "passed": false,
+      "message": "'Pclass': mean drifted 56.69% (threshold 20.00%)",
+      "severity": "error"
+    },
+    {
+      "check": "outliers",
+      "column": "Pclass",
+      "passed": true,
+      "message": "'Pclass': outlier rate 0.00% OK",
+      "severity": "error"
+    },
+    {
+      "check": "skewness",
+      "column": "Pclass",
+      "passed": true,
+      "message": "'Pclass': skewness 0.00 OK",
+      "severity": "error"
+    },
+    {
+      "check": "missing_rate",
+      "column": "Sex",
+      "passed": true,
+      "message": "'Sex': missing rate 0.00% OK",
+      "severity": "error"
+    },
+    {
+      "check": "mean_drift",
+      "column": "Sex",
+      "passed": false,
+      "message": "'Sex': mean drifted 21.08% (threshold 20.00%)",
+      "severity": "error"
+    },
+    {
+      "check": "variance_ratio",
+      "column": "Sex",
+      "passed": true,
+      "message": "'Sex': variance ratio 1.00 OK",
+      "severity": "error"
+    },
+    {
+      "check": "outliers",
+      "column": "Sex",
+      "passed": true,
+      "message": "'Sex': outlier rate 0.00% OK",
+      "severity": "error"
+    },
+    {
+      "check": "skewness",
+      "column": "Sex",
+      "passed": true,
+      "message": "'Sex': skewness -0.25 OK",
+      "severity": "error"
+    },
+    {
+      "check": "missing_rate",
+      "column": "Age",
+      "passed": true,
+      "message": "'Age': missing rate 0.00% OK",
+      "severity": "error"
+    },
+    {
+      "check": "mean_drift",
+      "column": "Age",
+      "passed": false,
+      "message": "'Age': mean drifted 111.27% (threshold 20.00%)",
+      "severity": "error"
+    },
+    {
+      "check": "variance_ratio",
+      "column": "Age",
+      "passed": true,
+      "message": "'Age': variance ratio 1.72 OK",
+      "severity": "error"
+    },
+    {
+      "check": "outliers",
+      "column": "Age",
+      "passed": true,
+      "message": "'Age': outlier rate 0.00% OK",
+      "severity": "error"
+    },
+    {
+      "check": "skewness",
+      "column": "Age",
+      "passed": true,
+      "message": "'Age': skewness 0.30 OK",
+      "severity": "error"
+    },
+    {
+      "check": "missing_rate",
+      "column": "SibSp",
+      "passed": true,
+      "message": "'SibSp': missing rate 0.00% OK",
+      "severity": "error"
+    },
+    {
+      "check": "mean_drift",
+      "column": "SibSp",
+      "passed": false,
+      "message": "'SibSp': mean drifted 100.00% (threshold 20.00%)",
+      "severity": "error"
+    },
+    {
+      "check": "outliers",
+      "column": "SibSp",
+      "passed": true,
+      "message": "'SibSp': outlier rate 0.00% OK",
+      "severity": "error"
+    },
+    {
+      "check": "skewness",
+      "column": "SibSp",
+      "passed": true,
+      "message": "'SibSp': skewness 0.00 OK",
+      "severity": "error"
+    },
+    {
+      "check": "missing_rate",
+      "column": "Parch",
+      "passed": true,
+      "message": "'Parch': missing rate 0.00% OK",
+      "severity": "error"
+    },
+    {
+      "check": "mean_drift",
+      "column": "Parch",
+      "passed": false,
+      "message": "'Parch': mean drifted 100.00% (threshold 20.00%)",
+      "severity": "error"
+    },
+    {
+      "check": "outliers",
+      "column": "Parch",
+      "passed": true,
+      "message": "'Parch': outlier rate 0.00% OK",
+      "severity": "error"
+    },
+    {
+      "check": "skewness",
+      "column": "Parch",
+      "passed": true,
+      "message": "'Parch': skewness 0.00 OK",
+      "severity": "error"
+    },
+    {
+      "check": "missing_rate",
+      "column": "Fare",
+      "passed": true,
+      "message": "'Fare': missing rate 0.00% OK",
+      "severity": "error"
+    },
+    {
+      "check": "mean_drift",
+      "column": "Fare",
+      "passed": false,
+      "message": "'Fare': mean drifted 1507.73% (threshold 20.00%)",
+      "severity": "error"
+    },
+    {
+      "check": "variance_ratio",
+      "column": "Fare",
+      "passed": false,
+      "message": "'Fare': variance ratio 3.19 exceeds 2.00",
+      "severity": "warning"
+    },
+    {
+      "check": "outliers",
+      "column": "Fare",
+      "passed": true,
+      "message": "'Fare': outlier rate 0.00% OK",
+      "severity": "error"
+    },
+    {
+      "check": "skewness",
+      "column": "Fare",
+      "passed": true,
+      "message": "'Fare': skewness 0.20 OK",
+      "severity": "error"
+    },
+    {
+      "check": "missing_rate",
+      "column": "Embarked",
+      "passed": true,
+      "message": "'Embarked': missing rate 0.00% OK",
+      "severity": "error"
+    },
+    {
+      "check": "mean_drift",
+      "column": "Embarked",
+      "passed": false,
+      "message": "'Embarked': mean drifted 100.00% (threshold 20.00%)",
+      "severity": "error"
+    },
+    {
+      "check": "outliers",
+      "column": "Embarked",
+      "passed": true,
+      "message": "'Embarked': outlier rate 0.00% OK",
+      "severity": "error"
+    },
+    {
+      "check": "skewness",
+      "column": "Embarked",
+      "passed": true,
+      "message": "'Embarked': skewness 0.00 OK",
+      "severity": "error"
+    }
+  ],
+  "column_stats": {
+    "Pclass": {
+      "dtype": "int64",
+      "null_count": 0,
+      "null_pct": 0.0,
+      "mean": 1.0,
+      "std": 0.0,
+      "min": 1.0,
+      "max": 1.0
+    },
+    "Sex": {
+      "dtype": "int64",
+      "null_count": 0,
+      "null_pct": 0.0,
+      "mean": 0.56,
+      "std": 0.5014,
+      "min": 0.0,
+      "max": 1.0
+    },
+    "Age": {
+      "dtype": "float64",
+      "null_count": 0,
+      "null_pct": 0.0,
+      "mean": 64.9853,
+      "std": 7.0542,
+      "min": 51.6221,
+      "max": 84.9405
+    },
+    "SibSp": {
+      "dtype": "int64",
+      "null_count": 0,
+      "null_pct": 0.0,
+      "mean": 0.0,
+      "std": 0.0,
+      "min": 0.0,
+      "max": 0.0
+    },
+    "Parch": {
+      "dtype": "int64",
+      "null_count": 0,
+      "null_pct": 0.0,
+      "mean": 0.0,
+      "std": 0.0,
+      "min": 0.0,
+      "max": 0.0
+    },
+    "Fare": {
+      "dtype": "float64",
+      "null_count": 0,
+      "null_pct": 0.0,
+      "mean": 512.929,
+      "std": 99.5529,
+      "min": 312.1171,
+      "max": 711.2524
+    },
+    "Embarked": {
+      "dtype": "int64",
+      "null_count": 0,
+      "null_pct": 0.0,
+      "mean": 0.0,
+      "std": 0.0,
+      "min": 0.0,
+      "max": 0.0
+    }
+  }
+}

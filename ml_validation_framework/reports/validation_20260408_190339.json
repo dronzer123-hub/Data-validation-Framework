@@ -1,0 +1,260 @@
+{
+  "timestamp": "2026-04-08T19:03:39.348224",
+  "data_shape": {
+    "rows": 300,
+    "columns": 3
+  },
+  "summary": {
+    "total_checks": 25,
+    "passed": 21,
+    "errors": 3,
+    "warnings": 1,
+    "valid": false
+  },
+  "errors": [
+    {
+      "check": "nullable",
+      "column": "age",
+      "message": "Column 'age': 6 null values found (not allowed)",
+      "details": {
+        "null_count": 6,
+        "null_pct": 2.0
+      }
+    },
+    {
+      "check": "min_value",
+      "column": "income",
+      "message": "Column 'income': 1 values below min 0",
+      "details": {
+        "violations": 1,
+        "min_allowed": 0
+      }
+    },
+    {
+      "check": "mean_drift",
+      "column": "income",
+      "message": "'income': mean drifted 298.39% (threshold 10.00%)",
+      "details": {
+        "ref_mean": 47961.1648,
+        "new_mean": 191071.413
+      }
+    }
+  ],
+  "warnings": [
+    {
+      "check": "variance_ratio",
+      "column": "income",
+      "message": "'income': variance ratio 4.10 exceeds 2.00",
+      "details": {
+        "ref_std": 14956.5146,
+        "new_std": 61305.167
+      }
+    }
+  ],
+  "all_results": [
+    {
+      "check": "min_rows",
+      "column": null,
+      "passed": true,
+      "message": "Row count 300 OK",
+      "severity": "error"
+    },
+    {
+      "check": "required_columns",
+      "column": null,
+      "passed": true,
+      "message": "All required columns present",
+      "severity": "error"
+    },
+    {
+      "check": "nullable",
+      "column": "age",
+      "passed": false,
+      "message": "Column 'age': 6 null values found (not allowed)",
+      "severity": "error"
+    },
+    {
+      "check": "min_value",
+      "column": "age",
+      "passed": true,
+      "message": "min_value check OK",
+      "severity": "error"
+    },
+    {
+      "check": "max_value",
+      "column": "age",
+      "passed": true,
+      "message": "max_value check OK",
+      "severity": "error"
+    },
+    {
+      "check": "nullable",
+      "column": "income",
+      "passed": true,
+      "message": "Null check OK (0 nulls)",
+      "severity": "error"
+    },
+    {
+      "check": "min_value",
+      "column": "income",
+      "passed": false,
+      "message": "Column 'income': 1 values below min 0",
+      "severity": "error"
+    },
+    {
+      "check": "nullable",
+      "column": "score",
+      "passed": true,
+      "message": "Null check OK (0 nulls)",
+      "severity": "error"
+    },
+    {
+      "check": "min_value",
+      "column": "score",
+      "passed": true,
+      "message": "min_value check OK",
+      "severity": "error"
+    },
+    {
+      "check": "max_value",
+      "column": "score",
+      "passed": true,
+      "message": "max_value check OK",
+      "severity": "error"
+    },
+    {
+      "check": "missing_rate",
+      "column": "age",
+      "passed": true,
+      "message": "'age': missing rate 2.00% OK",
+      "severity": "error"
+    },
+    {
+      "check": "mean_drift",
+      "column": "age",
+      "passed": true,
+      "message": "'age': mean drift 0.58% OK",
+      "severity": "error"
+    },
+    {
+      "check": "variance_ratio",
+      "column": "age",
+      "passed": true,
+      "message": "'age': variance ratio 1.01 OK",
+      "severity": "error"
+    },
+    {
+      "check": "outliers",
+      "column": "age",
+      "passed": true,
+      "message": "'age': outlier rate 0.00% OK",
+      "severity": "error"
+    },
+    {
+      "check": "skewness",
+      "column": "age",
+      "passed": true,
+      "message": "'age': skewness 0.22 OK",
+      "severity": "error"
+    },
+    {
+      "check": "missing_rate",
+      "column": "income",
+      "passed": true,
+      "message": "'income': missing rate 0.00% OK",
+      "severity": "error"
+    },
+    {
+      "check": "mean_drift",
+      "column": "income",
+      "passed": false,
+      "message": "'income': mean drifted 298.39% (threshold 10.00%)",
+      "severity": "error"
+    },
+    {
+      "check": "variance_ratio",
+      "column": "income",
+      "passed": false,
+      "message": "'income': variance ratio 4.10 exceeds 2.00",
+      "severity": "warning"
+    },
+    {
+      "check": "outliers",
+      "column": "income",
+      "passed": true,
+      "message": "'income': outlier rate 0.33% OK",
+      "severity": "error"
+    },
+    {
+      "check": "skewness",
+      "column": "income",
+      "passed": true,
+      "message": "'income': skewness -0.28 OK",
+      "severity": "error"
+    },
+    {
+      "check": "missing_rate",
+      "column": "score",
+      "passed": true,
+      "message": "'score': missing rate 0.00% OK",
+      "severity": "error"
+    },
+    {
+      "check": "mean_drift",
+      "column": "score",
+      "passed": true,
+      "message": "'score': mean drift 0.00% OK",
+      "severity": "error"
+    },
+    {
+      "check": "variance_ratio",
+      "column": "score",
+      "passed": true,
+      "message": "'score': variance ratio 1.00 OK",
+      "severity": "error"
+    },
+    {
+      "check": "outliers",
+      "column": "score",
+      "passed": true,
+      "message": "'score': outlier rate 0.00% OK",
+      "severity": "error"
+    },
+    {
+      "check": "skewness",
+      "column": "score",
+      "passed": true,
+      "message": "'score': skewness 0.13 OK",
+      "severity": "error"
+    }
+  ],
+  "column_stats": {
+    "age": {
+      "dtype": "float64",
+      "null_count": 6,
+      "null_pct": 2.0,
+      "mean": 35.1933,
+      "std": 9.6302,
+      "min": 18.0,
+      "max": 58.8314
+    },
+    "income": {
+      "dtype": "float64",
+      "null_count": 0,
+      "null_pct": 0.0,
+      "mean": 191071.413,
+      "std": 61305.167,
+      "min": -39996.0,
+      "max": 361773.4432
+    },
+    "score": {
+      "dtype": "float64",
+      "null_count": 0,
+      "null_pct": 0.0,
+      "mean": 695.2209,
+      "std": 48.077,
+      "min": 558.2723,
+      "max": 829.7212
+    }
+  }
+}

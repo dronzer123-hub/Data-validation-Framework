@@ -1,0 +1,47 @@
+# validation_config.yaml
+# Define schema rules and statistical thresholds for your dataset
+
+min_rows: 50
+max_rows: 1000000
+allow_extra_columns: true
+require_all_columns: true
+
+columns:
+  age:
+    dtype: float64
+    nullable: false
+    min_value: 0
+    max_value: 120
+
+  salary:
+    dtype: float64
+    nullable: true
+    min_value: 0
+
+  education_level:
+    dtype: object
+    nullable: false
+    allowed_values: ["High School", "Bachelor's", "Master's", "PhD"]
+
+  email:
+    dtype: object
+    nullable: true
+    regex: "^[^@]+@[^@]+\\.[^@]+$"
+
+  customer_id:
+    dtype: object
+    nullable: false
+    unique: true
+
+  credit_score:
+    dtype: float64
+    nullable: true
+    min_value: 300
+    max_value: 850
+
+statistical:
+  z_score_threshold: 3.0
+  drift_threshold: 0.10         # 10% mean drift allowed
+  missing_rate_threshold: 0.05  # 5% missing values allowed
+  skewness_threshold: 2.0
+  variance_ratio_threshold: 2.0

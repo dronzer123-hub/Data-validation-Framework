@@ -1,0 +1,452 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ML Data Validation Report</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #0f1117; color: #e2e8f0; }
+  .header { background: linear-gradient(135deg, #1a1f2e, #2d3748); padding: 2rem; border-bottom: 2px solid #4a5568; }
+  h1 { font-size: 1.8rem; color: #63b3ed; margin-bottom: .3rem; }
+  .meta { color: #718096; font-size: .9rem; }
+  .container { max-width: 1200px; margin: 2rem auto; padding: 0 1.5rem; }
+  .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-bottom: 2rem; }
+  .card { background: #1a1f2e; border: 1px solid #2d3748; border-radius: 8px; padding: 1.2rem; text-align: center; }
+  .card .num { font-size: 2.4rem; font-weight: bold; margin: .4rem 0; }
+  .card .label { color: #718096; font-size: .85rem; text-transform: uppercase; letter-spacing: .05em; }
+  .num.green { color: #68d391; } .num.red { color: #fc8181; } .num.yellow { color: #f6e05e; } .num.blue { color: #63b3ed; }
+  .badge { display: inline-block; padding: .3rem .9rem; border-radius: 20px; font-weight: bold; font-size: .9rem; margin-top: .5rem; }
+  .badge-pass { background: #22543d; color: #68d391; }
+  .badge-fail { background: #742a2a; color: #fc8181; }
+  section { background: #1a1f2e; border: 1px solid #2d3748; border-radius: 8px; margin-bottom: 1.5rem; overflow: hidden; }
+  section h2 { padding: 1rem 1.5rem; background: #2d3748; font-size: 1rem; color: #a0aec0; text-transform: uppercase; letter-spacing: .05em; }
+  .issues { padding: 1rem 1.5rem; }
+  .issue { padding: .6rem .9rem; border-radius: 6px; margin-bottom: .5rem; font-size: .88rem; }
+  .issue.error { background: #2d1b1b; border-left: 4px solid #fc8181; }
+  .issue.warning { background: #2d2a1b; border-left: 4px solid #f6e05e; }
+  table { width: 100%; border-collapse: collapse; font-size: .85rem; }
+  th { background: #2d3748; padding: .7rem 1rem; text-align: left; color: #a0aec0; font-weight: 600; }
+  td { padding: .6rem 1rem; border-bottom: 1px solid #2d3748; }
+  tr.pass td { color: #68d391; }
+  tr.fail td { color: #fc8181; }
+  tr.warn td { color: #f6e05e; }
+  .bad { color: #fc8181 !important; }
+  tr:hover td { background: #2d3748; }
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>⚡ ML Data Validation Report</h1>
+  <div class="meta">Generated: 2026-04-09T17:07:17.284556 &nbsp;|&nbsp; Shape: 50 rows × 7 columns &nbsp;|&nbsp; <span class="badge badge-fail">✗ INVALID</span></div>
+</div>
+<div class="container">
+  <div class="grid">
+    <div class="card"><div class="num blue">52</div><div class="label">Total Checks</div></div>
+    <div class="card"><div class="num green">44</div><div class="label">Passed</div></div>
+    <div class="card"><div class="num red">7</div><div class="label">Errors</div></div>
+    <div class="card"><div class="num yellow">1</div><div class="label">Warnings</div></div>
+  </div>
+
+  <section>
+    <h2>🔴 Errors</h2>
+    <div class="issues"><div class="issue error"><b>ERROR</b> [Pclass] 'Pclass': mean drifted 56.69% (threshold 20.00%)</div><div class="issue error"><b>ERROR</b> [Sex] 'Sex': mean drifted 21.08% (threshold 20.00%)</div><div class="issue error"><b>ERROR</b> [Age] 'Age': mean drifted 111.27% (threshold 20.00%)</div><div class="issue error"><b>ERROR</b> [SibSp] 'SibSp': mean drifted 100.00% (threshold 20.00%)</div><div class="issue error"><b>ERROR</b> [Parch] 'Parch': mean drifted 100.00% (threshold 20.00%)</div><div class="issue error"><b>ERROR</b> [Fare] 'Fare': mean drifted 1507.73% (threshold 20.00%)</div><div class="issue error"><b>ERROR</b> [Embarked] 'Embarked': mean drifted 100.00% (threshold 20.00%)</div></div>
+  </section>
+
+  <section>
+    <h2>⚠️ Warnings</h2>
+    <div class="issues"><div class="issue warning"><b>WARNING</b> [Fare] 'Fare': variance ratio 3.19 exceeds 2.00</div></div>
+  </section>
+
+  <section>
+    <h2>📊 Column Statistics</h2>
+    <table>
+      <tr><th>Column</th><th>Type</th><th>Nulls</th><th>Mean</th><th>Std</th><th>Min</th><th>Max</th></tr>
+      
+            <tr>
+              <td>Pclass</td>
+              <td>int64</td>
+              <td class="">0 (0.0%)</td>
+              <td>1.0</td>
+              <td>0.0</td>
+              <td>1.0</td>
+              <td>1.0</td>
+            </tr>
+            <tr>
+              <td>Sex</td>
+              <td>int64</td>
+              <td class="">0 (0.0%)</td>
+              <td>0.56</td>
+              <td>0.5014</td>
+              <td>0.0</td>
+              <td>1.0</td>
+            </tr>
+            <tr>
+              <td>Age</td>
+              <td>float64</td>
+              <td class="">0 (0.0%)</td>
+              <td>64.9853</td>
+              <td>7.0542</td>
+              <td>51.6221</td>
+              <td>84.9405</td>
+            </tr>
+            <tr>
+              <td>SibSp</td>
+              <td>int64</td>
+              <td class="">0 (0.0%)</td>
+              <td>0.0</td>
+              <td>0.0</td>
+              <td>0.0</td>
+              <td>0.0</td>
+            </tr>
+            <tr>
+              <td>Parch</td>
+              <td>int64</td>
+              <td class="">0 (0.0%)</td>
+              <td>0.0</td>
+              <td>0.0</td>
+              <td>0.0</td>
+              <td>0.0</td>
+            </tr>
+            <tr>
+              <td>Fare</td>
+              <td>float64</td>
+              <td class="">0 (0.0%)</td>
+              <td>512.929</td>
+              <td>99.5529</td>
+              <td>312.1171</td>
+              <td>711.2524</td>
+            </tr>
+            <tr>
+              <td>Embarked</td>
+              <td>int64</td>
+              <td class="">0 (0.0%)</td>
+              <td>0.0</td>
+              <td>0.0</td>
+              <td>0.0</td>
+              <td>0.0</td>
+            </tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>📋 All Checks</h2>
+    <table>
+      <tr><th></th><th>Check</th><th>Column</th><th>Message</th></tr>
+      
+            <tr class="pass">
+              <td>✓</td>
+              <td>min_rows</td>
+              <td>—</td>
+              <td>Row count 50 OK</td>
+            </tr>
+            <tr class="pass">
+              <td>✓</td>
+              <td>required_columns</td>
+              <td>—</td>
+              <td>All required columns present</td>
+            </tr>
+            <tr class="pass">
+              <td>✓</td>
+              <td>nullable</td>
+              <td>Pclass</td>
+              <td>Null check OK (0 nulls)</td>
+            </tr>
+            <tr class="pass">
+              <td>✓</td>
+              <td>min_value</td>
+              <td>Pclass</td>
+              <td>min_value check OK</td>
+            </tr>
+            <tr class="pass">
+              <td>✓</td>
+              <td>max_value</td>
+              <td>Pclass</td>
+              <td>max_value check OK</td>
+            </tr>
+            <tr class="pass">
+              <td>✓</td>
+              <td>allowed_values</td>
+              <td>Pclass</td>
+              <td>allowed_values check OK</td>
+            </tr>
+            <tr class="pass">
+              <td>✓</td>
+              <td>nullable</td>
+              <td>Sex</td>
+              <td>Null check OK (0 nulls)</td>
+            </tr>
+            <tr class="pass">
+              <td>✓</td>
+              <td>allowed_values</td>
+              <td>Sex</td>
+              <td>allowed_values check OK</td>
+            </tr>
+            <tr class="pass">
+              <td>✓</td>
+              <td>nullable</td>
+              <td>Age</td>
+              <td>Null check OK (0 nulls)</td>
+            </tr>
+            <tr class="pass">
+              <td>✓</td>
+              <td>min_value</td>
+              <td>Age</td>
+              <td>min_value check OK</td>
+            </tr>
+            <tr class="pass">
+              <td>✓</td>
+              <td>max_value</td>
+              <td>Age</td>
+              <td>max_value check OK</td>
+            </tr>
+            <tr class="pass">
+              <td>✓</td>
+              <td>nullable</td>
+              <td>SibSp</td>
+              <td>Null check OK (0 nulls)</td>
+            </tr>
+            <tr class="pass">
+              <td>✓</td>
+              <td>min_value</td>
+              <td>SibSp</td>
+              <td>min_value check OK</td>
+            </tr>
+            <tr class="pass">
+              <td>✓</td>
+              <td>max_value</td>
+              <td>SibSp</td>
+              <td>max_value check OK</td>
+            </tr>
+            <tr class="pass">
+              <td>✓</td>
+              <td>nullable</td>
+              <td>Parch</td>
+              <td>Null check OK (0 nulls)</td>
+            </tr>
+            <tr class="pass">
+              <td>✓</td>
+              <td>min_value</td>
+              <td>Parch</td>
+              <td>min_value check OK</td>
+            </tr>
+            <tr class="pass">
+              <td>✓</td>
+              <td>max_value</td>
+              <td>Parch</td>
+              <td>max_value check OK</td>
+            </tr>
+            <tr class="pass">
+              <td>✓</td>
+              <td>nullable</td>
+              <td>Fare</td>
+              <td>Null check OK (0 nulls)</td>
+            </tr>
+            <tr class="pass">
+              <td>✓</td>
+              <td>min_value</td>
+              <td>Fare</td>
+              <td>min_value check OK</td>
+            </tr>
+            <tr class="pass">
+              <td>✓</td>
+              <td>nullable</td>
+              <td>Embarked</td>
+              <td>Null check OK (0 nulls)</td>
+            </tr>
+            <tr class="pass">
+              <td>✓</td>
+              <td>allowed_values</td>
+              <td>Embarked</td>
+              <td>allowed_values check OK</td>
+            </tr>
+            <tr class="pass">
+              <td>✓</td>
+              <td>missing_rate</td>
+              <td>Pclass</td>
+              <td>'Pclass': missing rate 0.00% OK</td>
+            </tr>
+            <tr class="fail">
+              <td>✗</td>
+              <td>mean_drift</td>
+              <td>Pclass</td>
+              <td>'Pclass': mean drifted 56.69% (threshold 20.00%)</td>
+            </tr>
+            <tr class="pass">
+              <td>✓</td>
+              <td>outliers</td>
+              <td>Pclass</td>
+              <td>'Pclass': outlier rate 0.00% OK</td>
+            </tr>
+            <tr class="pass">
+              <td>✓</td>
+              <td>skewness</td>
+              <td>Pclass</td>
+              <td>'Pclass': skewness 0.00 OK</td>
+            </tr>
+            <tr class="pass">
+              <td>✓</td>
+              <td>missing_rate</td>
+              <td>Sex</td>
+              <td>'Sex': missing rate 0.00% OK</td>
+            </tr>
+            <tr class="fail">
+              <td>✗</td>
+              <td>mean_drift</td>
+              <td>Sex</td>
+              <td>'Sex': mean drifted 21.08% (threshold 20.00%)</td>
+            </tr>
+            <tr class="pass">
+              <td>✓</td>
+              <td>variance_ratio</td>
+              <td>Sex</td>
+              <td>'Sex': variance ratio 1.00 OK</td>
+            </tr>
+            <tr class="pass">
+              <td>✓</td>
+              <td>outliers</td>
+              <td>Sex</td>
+              <td>'Sex': outlier rate 0.00% OK</td>
+            </tr>
+            <tr class="pass">
+              <td>✓</td>
+              <td>skewness</td>
+              <td>Sex</td>
+              <td>'Sex': skewness -0.25 OK</td>
+            </tr>
+            <tr class="pass">
+              <td>✓</td>
+              <td>missing_rate</td>
+              <td>Age</td>
+              <td>'Age': missing rate 0.00% OK</td>
+            </tr>
+            <tr class="fail">
+              <td>✗</td>
+              <td>mean_drift</td>
+              <td>Age</td>
+              <td>'Age': mean drifted 111.27% (threshold 20.00%)</td>
+            </tr>
+            <tr class="pass">
+              <td>✓</td>
+              <td>variance_ratio</td>
+              <td>Age</td>
+              <td>'Age': variance ratio 1.72 OK</td>
+            </tr>
+            <tr class="pass">
+              <td>✓</td>
+              <td>outliers</td>
+              <td>Age</td>
+              <td>'Age': outlier rate 0.00% OK</td>
+            </tr>
+            <tr class="pass">
+              <td>✓</td>
+              <td>skewness</td>
+              <td>Age</td>
+              <td>'Age': skewness 0.30 OK</td>
+            </tr>
+            <tr class="pass">
+              <td>✓</td>
+              <td>missing_rate</td>
+              <td>SibSp</td>
+              <td>'SibSp': missing rate 0.00% OK</td>
+            </tr>
+            <tr class="fail">
+              <td>✗</td>
+              <td>mean_drift</td>
+              <td>SibSp</td>
+              <td>'SibSp': mean drifted 100.00% (threshold 20.00%)</td>
+            </tr>
+            <tr class="pass">
+              <td>✓</td>
+              <td>outliers</td>
+              <td>SibSp</td>
+              <td>'SibSp': outlier rate 0.00% OK</td>
+            </tr>
+            <tr class="pass">
+              <td>✓</td>
+              <td>skewness</td>
+              <td>SibSp</td>
+              <td>'SibSp': skewness 0.00 OK</td>
+            </tr>
+            <tr class="pass">
+              <td>✓</td>
+              <td>missing_rate</td>
+              <td>Parch</td>
+              <td>'Parch': missing rate 0.00% OK</td>
+            </tr>
+            <tr class="fail">
+              <td>✗</td>
+              <td>mean_drift</td>
+              <td>Parch</td>
+              <td>'Parch': mean drifted 100.00% (threshold 20.00%)</td>
+            </tr>
+            <tr class="pass">
+              <td>✓</td>
+              <td>outliers</td>
+              <td>Parch</td>
+              <td>'Parch': outlier rate 0.00% OK</td>
+            </tr>
+            <tr class="pass">
+              <td>✓</td>
+              <td>skewness</td>
+              <td>Parch</td>
+              <td>'Parch': skewness 0.00 OK</td>
+            </tr>
+            <tr class="pass">
+              <td>✓</td>
+              <td>missing_rate</td>
+              <td>Fare</td>
+              <td>'Fare': missing rate 0.00% OK</td>
+            </tr>
+            <tr class="fail">
+              <td>✗</td>
+              <td>mean_drift</td>
+              <td>Fare</td>
+              <td>'Fare': mean drifted 1507.73% (threshold 20.00%)</td>
+            </tr>
+            <tr class="warn">
+              <td>⚠</td>
+              <td>variance_ratio</td>
+              <td>Fare</td>
+              <td>'Fare': variance ratio 3.19 exceeds 2.00</td>
+            </tr>
+            <tr class="pass">
+              <td>✓</td>
+              <td>outliers</td>
+              <td>Fare</td>
+              <td>'Fare': outlier rate 0.00% OK</td>
+            </tr>
+            <tr class="pass">
+              <td>✓</td>
+              <td>skewness</td>
+              <td>Fare</td>
+              <td>'Fare': skewness 0.20 OK</td>
+            </tr>
+            <tr class="pass">
+              <td>✓</td>
+              <td>missing_rate</td>
+              <td>Embarked</td>
+              <td>'Embarked': missing rate 0.00% OK</td>
+            </tr>
+            <tr class="fail">
+              <td>✗</td>
+              <td>mean_drift</td>
+              <td>Embarked</td>
+              <td>'Embarked': mean drifted 100.00% (threshold 20.00%)</td>
+            </tr>
+            <tr class="pass">
+              <td>✓</td>
+              <td>outliers</td>
+              <td>Embarked</td>
+              <td>'Embarked': outlier rate 0.00% OK</td>
+            </tr>
+            <tr class="pass">
+              <td>✓</td>
+              <td>skewness</td>
+              <td>Embarked</td>
+              <td>'Embarked': skewness 0.00 OK</td>
+            </tr>
+    </table>
+  </section>
+</div>
+</body>
+</html>

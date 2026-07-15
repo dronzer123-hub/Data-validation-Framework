@@ -1,0 +1,362 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<title>ML Data Validation Report</title>
+<style>
+  * { box-sizing: border-box; margin: 0; padding: 0; }
+  body { font-family: 'Segoe UI', Arial, sans-serif; background: #0f1117; color: #e2e8f0; }
+  .header { background: linear-gradient(135deg, #1a1f2e, #2d3748); padding: 2rem; border-bottom: 2px solid #4a5568; }
+  h1 { font-size: 1.8rem; color: #63b3ed; margin-bottom: .3rem; }
+  .meta { color: #718096; font-size: .9rem; }
+  .container { max-width: 1200px; margin: 2rem auto; padding: 0 1.5rem; }
+  .grid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 1rem; margin-bottom: 2rem; }
+  .card { background: #1a1f2e; border: 1px solid #2d3748; border-radius: 8px; padding: 1.2rem; text-align: center; }
+  .card .num { font-size: 2.4rem; font-weight: bold; margin: .4rem 0; }
+  .card .label { color: #718096; font-size: .85rem; text-transform: uppercase; letter-spacing: .05em; }
+  .num.green { color: #68d391; } .num.red { color: #fc8181; } .num.yellow { color: #f6e05e; } .num.blue { color: #63b3ed; }
+  .badge { display: inline-block; padding: .3rem .9rem; border-radius: 20px; font-weight: bold; font-size: .9rem; margin-top: .5rem; }
+  .badge-pass { background: #22543d; color: #68d391; }
+  .badge-fail { background: #742a2a; color: #fc8181; }
+  section { background: #1a1f2e; border: 1px solid #2d3748; border-radius: 8px; margin-bottom: 1.5rem; overflow: hidden; }
+  section h2 { padding: 1rem 1.5rem; background: #2d3748; font-size: 1rem; color: #a0aec0; text-transform: uppercase; letter-spacing: .05em; }
+  .issues { padding: 1rem 1.5rem; }
+  .issue { padding: .6rem .9rem; border-radius: 6px; margin-bottom: .5rem; font-size: .88rem; }
+  .issue.error { background: #2d1b1b; border-left: 4px solid #fc8181; }
+  .issue.warning { background: #2d2a1b; border-left: 4px solid #f6e05e; }
+  table { width: 100%; border-collapse: collapse; font-size: .85rem; }
+  th { background: #2d3748; padding: .7rem 1rem; text-align: left; color: #a0aec0; font-weight: 600; }
+  td { padding: .6rem 1rem; border-bottom: 1px solid #2d3748; }
+  tr.pass td { color: #68d391; }
+  tr.fail td { color: #fc8181; }
+  tr.warn td { color: #f6e05e; }
+  .bad { color: #fc8181 !important; }
+  tr:hover td { background: #2d3748; }
+</style>
+</head>
+<body>
+<div class="header">
+  <h1>⚡ ML Data Validation Report</h1>
+  <div class="meta">Generated: 2026-04-10T13:48:23.875735 &nbsp;|&nbsp; Shape: 300 rows × 5 columns &nbsp;|&nbsp; <span class="badge badge-fail">✗ INVALID</span></div>
+</div>
+<div class="container">
+  <div class="grid">
+    <div class="card"><div class="num blue">40</div><div class="label">Total Checks</div></div>
+    <div class="card"><div class="num green">35</div><div class="label">Passed</div></div>
+    <div class="card"><div class="num red">4</div><div class="label">Errors</div></div>
+    <div class="card"><div class="num yellow">1</div><div class="label">Warnings</div></div>
+  </div>
+
+  <section>
+    <h2>🔴 Errors</h2>
+    <div class="issues"><div class="issue error"><b>ERROR</b> [credit_score] Column 'credit_score': 26 values below min 300</div><div class="issue error"><b>ERROR</b> [age] 'age': mean drifted 73.78% (threshold 15.00%)</div><div class="issue error"><b>ERROR</b> [income] 'income': mean drifted 257.82% (threshold 15.00%)</div><div class="issue error"><b>ERROR</b> [credit_score] 'credit_score': mean drifted 49.84% (threshold 15.00%)</div></div>
+  </section>
+
+  <section>
+    <h2>⚠️ Warnings</h2>
+    <div class="issues"><div class="issue warning"><b>WARNING</b> [income] 'income': variance ratio 3.46 exceeds 2.00</div></div>
+  </section>
+
+  <section>
+    <h2>📊 Column Statistics</h2>
+    <table>
+      <tr><th>Column</th><th>Type</th><th>Nulls</th><th>Mean</th><th>Std</th><th>Min</th><th>Max</th></tr>
+      
+            <tr>
+              <td>age</td>
+              <td>float64</td>
+              <td class="">0 (0.0%)</td>
+              <td>60.7033</td>
+              <td>9.5748</td>
+              <td>43.0</td>
+              <td>88.7536</td>
+            </tr>
+            <tr>
+              <td>income</td>
+              <td>float64</td>
+              <td class="">0 (0.0%)</td>
+              <td>193307.0726</td>
+              <td>50716.0286</td>
+              <td>48844.9247</td>
+              <td>326310.6748</td>
+            </tr>
+            <tr>
+              <td>credit_score</td>
+              <td>float64</td>
+              <td class="">0 (0.0%)</td>
+              <td>341.9338</td>
+              <td>30.7617</td>
+              <td>228.4594</td>
+              <td>425.0</td>
+            </tr>
+            <tr>
+              <td>loan_amount</td>
+              <td>float64</td>
+              <td class="">0 (0.0%)</td>
+              <td>15432.6649</td>
+              <td>5202.5749</td>
+              <td>1000.0</td>
+              <td>33346.5308</td>
+            </tr>
+            <tr>
+              <td>years_employed</td>
+              <td>float64</td>
+              <td class="">0 (0.0%)</td>
+              <td>7.1941</td>
+              <td>3.0612</td>
+              <td>0.0</td>
+              <td>16.3142</td>
+            </tr>
+    </table>
+  </section>
+
+  <section>
+    <h2>📋 All Checks</h2>
+    <table>
+      <tr><th></th><th>Check</th><th>Column</th><th>Message</th></tr>
+      
+            <tr class="pass">
+              <td>✓</td>
+              <td>min_rows</td>
+              <td>—</td>
+              <td>Row count 300 OK</td>
+            </tr>
+            <tr class="pass">
+              <td>✓</td>
+              <td>required_columns</td>
+              <td>—</td>
+              <td>All required columns present</td>
+            </tr>
+            <tr class="pass">
+              <td>✓</td>
+              <td>nullable</td>
+              <td>age</td>
+              <td>Null check OK (0 nulls)</td>
+            </tr>
+            <tr class="pass">
+              <td>✓</td>
+              <td>min_value</td>
+              <td>age</td>
+              <td>min_value check OK</td>
+            </tr>
+            <tr class="pass">
+              <td>✓</td>
+              <td>max_value</td>
+              <td>age</td>
+              <td>max_value check OK</td>
+            </tr>
+            <tr class="pass">
+              <td>✓</td>
+              <td>nullable</td>
+              <td>income</td>
+              <td>Null check OK (0 nulls)</td>
+            </tr>
+            <tr class="pass">
+              <td>✓</td>
+              <td>min_value</td>
+              <td>income</td>
+              <td>min_value check OK</td>
+            </tr>
+            <tr class="pass">
+              <td>✓</td>
+              <td>nullable</td>
+              <td>credit_score</td>
+              <td>Null check OK (0 nulls)</td>
+            </tr>
+            <tr class="fail">
+              <td>✗</td>
+              <td>min_value</td>
+              <td>credit_score</td>
+              <td>Column 'credit_score': 26 values below min 300</td>
+            </tr>
+            <tr class="pass">
+              <td>✓</td>
+              <td>max_value</td>
+              <td>credit_score</td>
+              <td>max_value check OK</td>
+            </tr>
+            <tr class="pass">
+              <td>✓</td>
+              <td>nullable</td>
+              <td>loan_amount</td>
+              <td>Null check OK (0 nulls)</td>
+            </tr>
+            <tr class="pass">
+              <td>✓</td>
+              <td>min_value</td>
+              <td>loan_amount</td>
+              <td>min_value check OK</td>
+            </tr>
+            <tr class="pass">
+              <td>✓</td>
+              <td>nullable</td>
+              <td>years_employed</td>
+              <td>Null check OK (0 nulls)</td>
+            </tr>
+            <tr class="pass">
+              <td>✓</td>
+              <td>min_value</td>
+              <td>years_employed</td>
+              <td>min_value check OK</td>
+            </tr>
+            <tr class="pass">
+              <td>✓</td>
+              <td>max_value</td>
+              <td>years_employed</td>
+              <td>max_value check OK</td>
+            </tr>
+            <tr class="pass">
+              <td>✓</td>
+              <td>missing_rate</td>
+              <td>age</td>
+              <td>'age': missing rate 0.00% OK</td>
+            </tr>
+            <tr class="fail">
+              <td>✗</td>
+              <td>mean_drift</td>
+              <td>age</td>
+              <td>'age': mean drifted 73.78% (threshold 15.00%)</td>
+            </tr>
+            <tr class="pass">
+              <td>✓</td>
+              <td>variance_ratio</td>
+              <td>age</td>
+              <td>'age': variance ratio 1.00 OK</td>
+            </tr>
+            <tr class="pass">
+              <td>✓</td>
+              <td>outliers</td>
+              <td>age</td>
+              <td>'age': outlier rate 0.00% OK</td>
+            </tr>
+            <tr class="pass">
+              <td>✓</td>
+              <td>skewness</td>
+              <td>age</td>
+              <td>'age': skewness 0.05 OK</td>
+            </tr>
+            <tr class="pass">
+              <td>✓</td>
+              <td>missing_rate</td>
+              <td>income</td>
+              <td>'income': missing rate 0.00% OK</td>
+            </tr>
+            <tr class="fail">
+              <td>✗</td>
+              <td>mean_drift</td>
+              <td>income</td>
+              <td>'income': mean drifted 257.82% (threshold 15.00%)</td>
+            </tr>
+            <tr class="warn">
+              <td>⚠</td>
+              <td>variance_ratio</td>
+              <td>income</td>
+              <td>'income': variance ratio 3.46 exceeds 2.00</td>
+            </tr>
+            <tr class="pass">
+              <td>✓</td>
+              <td>outliers</td>
+              <td>income</td>
+              <td>'income': outlier rate 0.00% OK</td>
+            </tr>
+            <tr class="pass">
+              <td>✓</td>
+              <td>skewness</td>
+              <td>income</td>
+              <td>'income': skewness 0.01 OK</td>
+            </tr>
+            <tr class="pass">
+              <td>✓</td>
+              <td>missing_rate</td>
+              <td>credit_score</td>
+              <td>'credit_score': missing rate 0.00% OK</td>
+            </tr>
+            <tr class="fail">
+              <td>✗</td>
+              <td>mean_drift</td>
+              <td>credit_score</td>
+              <td>'credit_score': mean drifted 49.84% (threshold 15.00%)</td>
+            </tr>
+            <tr class="pass">
+              <td>✓</td>
+              <td>variance_ratio</td>
+              <td>credit_score</td>
+              <td>'credit_score': variance ratio 1.88 OK</td>
+            </tr>
+            <tr class="pass">
+              <td>✓</td>
+              <td>outliers</td>
+              <td>credit_score</td>
+              <td>'credit_score': outlier rate 0.33% OK</td>
+            </tr>
+            <tr class="pass">
+              <td>✓</td>
+              <td>skewness</td>
+              <td>credit_score</td>
+              <td>'credit_score': skewness -0.12 OK</td>
+            </tr>
+            <tr class="pass">
+              <td>✓</td>
+              <td>missing_rate</td>
+              <td>loan_amount</td>
+              <td>'loan_amount': missing rate 0.00% OK</td>
+            </tr>
+            <tr class="pass">
+              <td>✓</td>
+              <td>mean_drift</td>
+              <td>loan_amount</td>
+              <td>'loan_amount': mean drift 2.95% OK</td>
+            </tr>
+            <tr class="pass">
+              <td>✓</td>
+              <td>variance_ratio</td>
+              <td>loan_amount</td>
+              <td>'loan_amount': variance ratio 1.07 OK</td>
+            </tr>
+            <tr class="pass">
+              <td>✓</td>
+              <td>outliers</td>
+              <td>loan_amount</td>
+              <td>'loan_amount': outlier rate 0.33% OK</td>
+            </tr>
+            <tr class="pass">
+              <td>✓</td>
+              <td>skewness</td>
+              <td>loan_amount</td>
+              <td>'loan_amount': skewness -0.04 OK</td>
+            </tr>
+            <tr class="pass">
+              <td>✓</td>
+              <td>missing_rate</td>
+              <td>years_employed</td>
+              <td>'years_employed': missing rate 0.00% OK</td>
+            </tr>
+            <tr class="pass">
+              <td>✓</td>
+              <td>mean_drift</td>
+              <td>years_employed</td>
+              <td>'years_employed': mean drift 3.91% OK</td>
+            </tr>
+            <tr class="pass">
+              <td>✓</td>
+              <td>variance_ratio</td>
+              <td>years_employed</td>
+              <td>'years_employed': variance ratio 1.06 OK</td>
+            </tr>
+            <tr class="pass">
+              <td>✓</td>
+              <td>outliers</td>
+              <td>years_employed</td>
+              <td>'years_employed': outlier rate 0.00% OK</td>
+            </tr>
+            <tr class="pass">
+              <td>✓</td>
+              <td>skewness</td>
+              <td>years_employed</td>
+              <td>'years_employed': skewness 0.12 OK</td>
+            </tr>
+    </table>
+  </section>
+</div>
+</body>
+</html>

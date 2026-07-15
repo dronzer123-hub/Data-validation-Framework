@@ -1,0 +1,398 @@
+{
+  "timestamp": "2026-04-10T04:09:12.876005",
+  "data_shape": {
+    "rows": 300,
+    "columns": 5
+  },
+  "summary": {
+    "total_checks": 40,
+    "passed": 34,
+    "errors": 4,
+    "warnings": 2,
+    "valid": false
+  },
+  "errors": [
+    {
+      "check": "nullable",
+      "column": "age",
+      "message": "Column 'age': 5 null values found (not allowed)",
+      "details": {
+        "null_count": 5,
+        "null_pct": 1.67
+      }
+    },
+    {
+      "check": "min_value",
+      "column": "income",
+      "message": "Column 'income': 1 values below min 0",
+      "details": {
+        "violations": 1,
+        "min_allowed": 0
+      }
+    },
+    {
+      "check": "min_value",
+      "column": "credit_score",
+      "message": "Column 'credit_score': 3 values below min 300",
+      "details": {
+        "violations": 3,
+        "min_allowed": 300
+      }
+    },
+    {
+      "check": "nullable",
+      "column": "loan_amount",
+      "message": "Column 'loan_amount': 3 null values found (not allowed)",
+      "details": {
+        "null_count": 3,
+        "null_pct": 1.0
+      }
+    }
+  ],
+  "warnings": [
+    {
+      "check": "variance_ratio",
+      "column": "credit_score",
+      "message": "'credit_score': variance ratio 3.08 exceeds 2.00",
+      "details": {
+        "ref_std": 57.8431,
+        "new_std": 177.979
+      }
+    },
+    {
+      "check": "skewness",
+      "column": "credit_score",
+      "message": "'credit_score': skewness -8.27 exceeds threshold \u00b12.5",
+      "details": null
+    }
+  ],
+  "all_results": [
+    {
+      "check": "min_rows",
+      "column": null,
+      "passed": true,
+      "message": "Row count 300 OK",
+      "severity": "error"
+    },
+    {
+      "check": "required_columns",
+      "column": null,
+      "passed": true,
+      "message": "All required columns present",
+      "severity": "error"
+    },
+    {
+      "check": "nullable",
+      "column": "age",
+      "passed": false,
+      "message": "Column 'age': 5 null values found (not allowed)",
+      "severity": "error"
+    },
+    {
+      "check": "min_value",
+      "column": "age",
+      "passed": true,
+      "message": "min_value check OK",
+      "severity": "error"
+    },
+    {
+      "check": "max_value",
+      "column": "age",
+      "passed": true,
+      "message": "max_value check OK",
+      "severity": "error"
+    },
+    {
+      "check": "nullable",
+      "column": "income",
+      "passed": true,
+      "message": "Null check OK (0 nulls)",
+      "severity": "error"
+    },
+    {
+      "check": "min_value",
+      "column": "income",
+      "passed": false,
+      "message": "Column 'income': 1 values below min 0",
+      "severity": "error"
+    },
+    {
+      "check": "nullable",
+      "column": "credit_score",
+      "passed": true,
+      "message": "Null check OK (0 nulls)",
+      "severity": "error"
+    },
+    {
+      "check": "min_value",
+      "column": "credit_score",
+      "passed": false,
+      "message": "Column 'credit_score': 3 values below min 300",
+      "severity": "error"
+    },
+    {
+      "check": "max_value",
+      "column": "credit_score",
+      "passed": true,
+      "message": "max_value check OK",
+      "severity": "error"
+    },
+    {
+      "check": "nullable",
+      "column": "loan_amount",
+      "passed": false,
+      "message": "Column 'loan_amount': 3 null values found (not allowed)",
+      "severity": "error"
+    },
+    {
+      "check": "min_value",
+      "column": "loan_amount",
+      "passed": true,
+      "message": "min_value check OK",
+      "severity": "error"
+    },
+    {
+      "check": "nullable",
+      "column": "years_employed",
+      "passed": true,
+      "message": "Null check OK (0 nulls)",
+      "severity": "error"
+    },
+    {
+      "check": "min_value",
+      "column": "years_employed",
+      "passed": true,
+      "message": "min_value check OK",
+      "severity": "error"
+    },
+    {
+      "check": "max_value",
+      "column": "years_employed",
+      "passed": true,
+      "message": "max_value check OK",
+      "severity": "error"
+    },
+    {
+      "check": "missing_rate",
+      "column": "age",
+      "passed": true,
+      "message": "'age': missing rate 1.67% OK",
+      "severity": "error"
+    },
+    {
+      "check": "mean_drift",
+      "column": "age",
+      "passed": true,
+      "message": "'age': mean drift 0.23% OK",
+      "severity": "error"
+    },
+    {
+      "check": "variance_ratio",
+      "column": "age",
+      "passed": true,
+      "message": "'age': variance ratio 1.01 OK",
+      "severity": "error"
+    },
+    {
+      "check": "outliers",
+      "column": "age",
+      "passed": true,
+      "message": "'age': outlier rate 0.34% OK",
+      "severity": "error"
+    },
+    {
+      "check": "skewness",
+      "column": "age",
+      "passed": true,
+      "message": "'age': skewness 0.39 OK",
+      "severity": "error"
+    },
+    {
+      "check": "missing_rate",
+      "column": "income",
+      "passed": true,
+      "message": "'income': missing rate 0.00% OK",
+      "severity": "error"
+    },
+    {
+      "check": "mean_drift",
+      "column": "income",
+      "passed": true,
+      "message": "'income': mean drift 0.51% OK",
+      "severity": "error"
+    },
+    {
+      "check": "variance_ratio",
+      "column": "income",
+      "passed": true,
+      "message": "'income': variance ratio 1.07 OK",
+      "severity": "error"
+    },
+    {
+      "check": "outliers",
+      "column": "income",
+      "passed": true,
+      "message": "'income': outlier rate 0.33% OK",
+      "severity": "error"
+    },
+    {
+      "check": "skewness",
+      "column": "income",
+      "passed": true,
+      "message": "'income': skewness -0.83 OK",
+      "severity": "error"
+    },
+    {
+      "check": "missing_rate",
+      "column": "credit_score",
+      "passed": true,
+      "message": "'credit_score': missing rate 0.00% OK",
+      "severity": "error"
+    },
+    {
+      "check": "mean_drift",
+      "column": "credit_score",
+      "passed": true,
+      "message": "'credit_score': mean drift 1.99% OK",
+      "severity": "error"
+    },
+    {
+      "check": "variance_ratio",
+      "column": "credit_score",
+      "passed": false,
+      "message": "'credit_score': variance ratio 3.08 exceeds 2.00",
+      "severity": "warning"
+    },
+    {
+      "check": "outliers",
+      "column": "credit_score",
+      "passed": true,
+      "message": "'credit_score': outlier rate 1.00% OK",
+      "severity": "error"
+    },
+    {
+      "check": "skewness",
+      "column": "credit_score",
+      "passed": false,
+      "message": "'credit_score': skewness -8.27 exceeds threshold \u00b12.5",
+      "severity": "warning"
+    },
+    {
+      "check": "missing_rate",
+      "column": "loan_amount",
+      "passed": true,
+      "message": "'loan_amount': missing rate 1.00% OK",
+      "severity": "error"
+    },
+    {
+      "check": "mean_drift",
+      "column": "loan_amount",
+      "passed": true,
+      "message": "'loan_amount': mean drift 3.16% OK",
+      "severity": "error"
+    },
+    {
+      "check": "variance_ratio",
+      "column": "loan_amount",
+      "passed": true,
+      "message": "'loan_amount': variance ratio 1.04 OK",
+      "severity": "error"
+    },
+    {
+      "check": "outliers",
+      "column": "loan_amount",
+      "passed": true,
+      "message": "'loan_amount': outlier rate 0.00% OK",
+      "severity": "error"
+    },
+    {
+      "check": "skewness",
+      "column": "loan_amount",
+      "passed": true,
+      "message": "'loan_amount': skewness -0.21 OK",
+      "severity": "error"
+    },
+    {
+      "check": "missing_rate",
+      "column": "years_employed",
+      "passed": true,
+      "message": "'years_employed': missing rate 0.00% OK",
+      "severity": "error"
+    },
+    {
+      "check": "mean_drift",
+      "column": "years_employed",
+      "passed": true,
+      "message": "'years_employed': mean drift 5.15% OK",
+      "severity": "error"
+    },
+    {
+      "check": "variance_ratio",
+      "column": "years_employed",
+      "passed": true,
+      "message": "'years_employed': variance ratio 1.04 OK",
+      "severity": "error"
+    },
+    {
+      "check": "outliers",
+      "column": "years_employed",
+      "passed": true,
+      "message": "'years_employed': outlier rate 0.00% OK",
+      "severity": "error"
+    },
+    {
+      "check": "skewness",
+      "column": "years_employed",
+      "passed": true,
+      "message": "'years_employed': skewness 0.13 OK",
+      "severity": "error"
+    }
+  ],
+  "column_stats": {
+    "age": {
+      "dtype": "float64",
+      "null_count": 5,
+      "null_pct": 1.67,
+      "mean": 35.0106,
+      "std": 9.5543,
+      "min": 18.0,
+      "max": 73.5273
+    },
+    "income": {
+      "dtype": "float64",
+      "null_count": 0,
+      "null_pct": 0.0,
+      "mean": 54300.2954,
+      "std": 15630.7455,
+      "min": -50000.0,
+      "max": 101183.2121
+    },
+    "credit_score": {
+      "dtype": "float64",
+      "null_count": 0,
+      "null_pct": 0.0,
+      "mean": 668.17,
+      "std": 177.979,
+      "min": -999.0,
+      "max": 837.9429
+    },
+    "loan_amount": {
+      "dtype": "float64",
+      "null_count": 3,
+      "null_pct": 1.0,
+      "mean": 15464.3461,
+      "std": 5030.2636,
+      "min": 1000.0,
+      "max": 27198.762
+    },
+    "years_employed": {
+      "dtype": "float64",
+      "null_count": 0,
+      "null_pct": 0.0,
+      "mean": 7.2799,
+      "std": 2.9818,
+      "min": 0.0,
+      "max": 14.805
+    }
+  }
+}
